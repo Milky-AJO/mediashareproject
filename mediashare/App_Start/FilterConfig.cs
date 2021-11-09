@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace mediashare
+namespace MediaShare
 {
     public class FilterConfig
     {

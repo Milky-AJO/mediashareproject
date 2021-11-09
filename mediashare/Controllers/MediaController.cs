@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using mediashare.Models;
+using MediaShare.Models;
 
-namespace mediashare.Controllers
+namespace MediaShare.Controllers
 {
     public class MediaController : Controller
     {

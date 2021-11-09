@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using mediashare.Models;
+using MediaShare.Models;
 
-namespace mediashare.Controllers
+namespace MediaShare.Controllers
 {
     [Authorize]
     public class AccountController : Controller

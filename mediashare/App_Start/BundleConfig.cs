@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace mediashare
+namespace MediaShare
 {
     public class BundleConfig
     {

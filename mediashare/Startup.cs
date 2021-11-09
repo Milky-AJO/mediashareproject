@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(mediashare.Startup))]
-namespace mediashare
+[assembly: OwinStartupAttribute(typeof(MediaShare.Startup))]
+namespace MediaShare
 {
     public partial class Startup
     {
