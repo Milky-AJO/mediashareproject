@@ -10,10 +10,21 @@ namespace MediaShare.Controllers
     public class MediaController : Controller
     {
         // GET: Media
-        public ActionResult Index()
+        public ActionResult Index(int? pageIndex, string sortBy)
         {
-            var media = new Media() {Name = "My Picture"};
+            if (!pageIndex.HasValue)
+                pageIndex = 1;
+            if (String.IsNullOrEmpty(sortBy))
+                sortBy = "Name";
+            return Content(String.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
+        }
+
+        public ActionResult Initial()
+        {
+            var media = new Media() { Name = "My Media" };
+
             return View(media);
         }
+
     }
 }
