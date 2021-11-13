@@ -62,6 +62,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -176,6 +178,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MediaController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -184,8 +187,27 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Image.cs">
+      <DependentUpon>QuickEDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Media.cs" />
+    <Compile Include="Models\QuickEDModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuickEDModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuickEDModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuickEDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuickEDModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuickEDModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -203,8 +225,25 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Iconimage.ico" />
+    <Content Include="Models\QuickEDModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuickEDModel.edmx</DependentUpon>
+      <LastGenOutput>QuickEDModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\QuickEDModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuickEDModel.edmx</DependentUpon>
+      <LastGenOutput>QuickEDModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\QuickEDModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuickEDModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QuickEDModel.edmx.diagram">
+      <DependentUpon>QuickEDModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -256,6 +295,7 @@
     <Content Include="Views\Media\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\ListUser.cshtml" />
+    <Content Include="Views\Image\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -272,6 +312,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
